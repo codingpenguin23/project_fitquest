@@ -7,6 +7,7 @@ public class AttackMenu : MonoBehaviour {
 	public void LoadAttackMenu () {
 		GameObject attack_Menu = Resources.Load<GameObject>("AttackMenu");
 		GameObject menu = GameObject.Instantiate(attack_Menu)as GameObject;
+		menu.tag = "AttackMenu";
 	}
 	
 	// Update is called once per frame

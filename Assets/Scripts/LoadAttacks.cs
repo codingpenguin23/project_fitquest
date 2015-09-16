@@ -20,10 +20,24 @@ public class LoadAttacks : MonoBehaviour {
 		{
 			if (GUILayout.Button(attack))
 			{
-				switch ()
-					case attacks[0]:
+				switch (attack)
+				{
+					case "Melee":
+						Debug.Log("Melee");
 						break;
+					case "Magic":
+						Debug.Log("Magic");
+						break;
+					case "Special":
+						Debug.Log ("Special");
+						break;
+				}
 			}
+		}
+		if(GUILayout.Button("Close"))
+		{
+			GameObject menu = GameObject.FindGameObjectWithTag("AttackMenu").gameObject;
+			GameObject.Destroy(menu);
 		}
 	}
 }
