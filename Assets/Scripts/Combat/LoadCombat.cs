@@ -7,7 +7,6 @@ public class LoadCombat : MonoBehaviour {
 
 	public void LoadScene()
 	{
-		var LastLevel = Application.loadedLevel;
 		Application.LoadLevel(Combat);
 	}
 }
