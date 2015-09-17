@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Attacks : MonoBehaviour
+public class Attack : MonoBehaviour
 {
 
 	private string name;
 	private int damage;
 	private int apCost;
 
-	public Attacks (string attackName, int attackDamage,int attackAPCost)
+	public Attack (string attackName, int attackDamage,int attackAPCost)
 	{
 		name = attackName;
 		damage = attackDamage;

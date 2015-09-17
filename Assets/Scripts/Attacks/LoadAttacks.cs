@@ -5,11 +5,12 @@ using System.Collections.Generic;
 
 public class LoadAttacks : MonoBehaviour {
 
-	public List<Attacks> loadedAttacks = new List<Attacks>();
+	public List<Attack> loadedAttacks = new List<Attack>();
 	public int[] damage;
 	//public GameObject avatar = GameObject.Find("Player").gameObject;
 	public Animator p_animator;
 	public Animator e_animator;
+	private bool isAttacking;
 	// Use this for initialization
 	void Start () {
 		loadAttacks();
@@ -36,13 +37,16 @@ public class LoadAttacks : MonoBehaviour {
 	}
 	void Update () 
 		{
-	
+			if (p_animator == null)
+				{Debug.Log("Player Animator is null");}
+			else 
+				{p_animator.SetBool("isAttacking",isAttacking);}
 		}
 	void OnGUI ()
 	{
 		GameObject menu = GameObject.FindGameObjectWithTag("AttackMenu").gameObject;
 
-		foreach (Attacks a in loadedAttacks)
+		foreach (Attack a in loadedAttacks)
 		{
 			if (GUILayout.Button(a.getAttackName(), GUILayout.Width(300),GUILayout.Height(100)))
 					{
@@ -50,8 +54,7 @@ public class LoadAttacks : MonoBehaviour {
 						{
 							case "Melee":
 								GameObject.Destroy (menu);
-								p_animator.Play("Attack");
-								e_animator.Play("Die");
+								isAttacking = true;
 								break;
 							case "Magic":
 								Debug.Log(a.getAttackName());
@@ -75,11 +78,11 @@ public class LoadAttacks : MonoBehaviour {
 	void loadAttacks()
 	{
 		//All attack values are base levels, modifiers will be applied later.
-		Attacks melee = new Attacks("Melee",20,10);
+		Attack melee = new Attack("Melee",20,10);
 		loadedAttacks.Add(melee);
-		Attacks magic = new Attacks("Magic",50,20);
+		Attack magic = new Attack("Magic",50,20);
 		loadedAttacks.Add(magic);
-		Attacks special = new Attacks("Special",100,50);
+		Attack special = new Attack("Special",100,50);
 		loadedAttacks.Add(special);
 	}
 }
