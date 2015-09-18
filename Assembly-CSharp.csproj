@@ -47,12 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Classes\Attack.cs" />
+     <Compile Include="Assets\Classes\CharacterClass.cs" />
      <Compile Include="Assets\Scripts\Attacks\AttackMenu.cs" />
      <Compile Include="Assets\Scripts\Attacks\LoadAttacks.cs" />
      <Compile Include="Assets\Scripts\Combat\CombatStateMachine.cs" />
      <Compile Include="Assets\Scripts\Combat\LoadCombat.cs" />
      <Compile Include="Assets\Scripts\Combat\PlayerCombat.cs" />
+     <Compile Include="Assets\Scripts\GameInformation.cs" />
      <Compile Include="Assets\Scripts\LoadStatus.cs" />
+     <Compile Include="Assets\Scripts\Player\Player_Combat.cs" />
+     <Compile Include="Assets\Scripts\Saving and Loading\LoadInformation.cs" />
+     <Compile Include="Assets\Scripts\Saving and Loading\SaveInformation.cs" />
      <Compile Include="Assets\Scripts\Settings\SettingsMenu.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
